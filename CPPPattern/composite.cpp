@@ -61,20 +61,12 @@ private:
 
 int main()
 {
+	Student* student1 = new Student("Mahsa", "0565654");
+	Student* student2 = new Student("Kashi", "0546654");
 
-	list<Student> studentList1;
-	studentList1.push_back(Student("Mahsa Kashi", "0565654"));
-
-
-	//studentList.push_back(Student("HassanKashi", "0565654"));
-
-
-	
-
-	PersonCollection personCollection;
-	//personCollection.add(studentList);
-
-
+	PersonCollection studentCollection;
+	studentCollection.add(student1);
+	studentCollection.add(student2);
 
 	Teacher* teacher1 = new Teacher("Sara", "038756678");
 	Teacher* teacher2 = new Teacher("Sima", "078687688");
@@ -83,12 +75,10 @@ int main()
 	teacherCollection.add(teacher1);
 	teacherCollection.add(teacher2);
 
-
 	PersonCollection personList;
-	//personList.add(studentList1);
+	personList.add(&studentCollection);
 	personList.add(&teacherCollection);
 	personList.show();
-
 
 	return 0;
 }
